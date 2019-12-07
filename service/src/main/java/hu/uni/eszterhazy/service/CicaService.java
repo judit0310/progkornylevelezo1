@@ -4,6 +4,7 @@ import hu.uni.eszterhazy.dao.ICicaDAO;
 import hu.uni.eszterhazy.exceptions.CicaNotFound;
 import hu.uni.eszterhazy.exceptions.EzAChipMarSzerepel;
 import hu.uni.eszterhazy.model.Cica;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.util.Collection;
 
 public class CicaService {
     ICicaDAO dao;
+    Logger logger = Logger.getLogger(this.getClass());
 
     public CicaService(ICicaDAO dao) {
         this.dao = dao;
@@ -39,6 +41,7 @@ public class CicaService {
             }
 
         }
+        logger.debug("A "+min+"-"+max+"  kor között "+result.size()+" db cica van");
         return result;
     }
 

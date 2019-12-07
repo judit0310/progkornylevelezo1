@@ -10,7 +10,7 @@ import java.io.IOException;
 public class CicaDAOTest {
     @Test
     public void testDB() throws IOException, NemJoNev {
-        CicaDAO dao = new CicaDAO("kiscica.json");
+        CicaDAO dao = new CicaDAO("nagycica.json");
         Cica c = new Cica();
         c.setNev("Paca");
         //dao.addCica(c);
