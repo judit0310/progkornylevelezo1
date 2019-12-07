@@ -6,6 +6,7 @@ import hu.uni.eszterhazy.exceptions.NemJoKor;
 import hu.uni.eszterhazy.exceptions.NemJoNev;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Cica {
     private int kor;
@@ -136,5 +137,26 @@ public class Cica {
                 ", ivartalanitott=" + ivartalanitott +
                 ", fajta='" + fajta + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cica cica = (Cica) o;
+        return kor == cica.kor &&
+                ivartalanitott == cica.ivartalanitott &&
+                szin == cica.szin &&
+                Objects.equals(nev, cica.nev) &&
+                Objects.equals(gazda_neve, cica.gazda_neve) &&
+                Objects.equals(oltas_ideje, cica.oltas_ideje) &&
+                Objects.equals(chip, cica.chip) &&
+                nem == cica.nem &&
+                Objects.equals(fajta, cica.fajta);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(kor, szin, nev, gazda_neve, oltas_ideje, chip, nem, ivartalanitott, fajta);
     }
 }

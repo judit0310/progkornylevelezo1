@@ -1,4 +1,4 @@
-package hu.uni.eszterhazy.dao;
+package hu.uni.eszterhazy.dao.impl;
 
 
 import hu.uni.eszterhazy.exceptions.NemJoNev;
